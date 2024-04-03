@@ -1,45 +1,109 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
 <div class="registrarse__container">
   <div>
-    <h4>Registrarse</h4>
+    <h4>Crea una cuenta y mantente informado</h4>
+    <p>Es rápido y fácil.</p>
   </div>
-  <div>
+  <div class="div__form__container">
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
       <div>
-        <label for="user__name__id">User Name</label>
-        <input formControlName="userName" type="text" id="user__name__id"
-        [class.inp__valid]="userNameControl?.valid "/>
+        <span
+          class="span__err"
+          *ngIf="
+            userNameControl?.invalid &&
+            (userNameControl?.dirty || userNameControl?.touched)
+          "
+        >
+          El nombre de usuario solo pude contener letras y numeros
+        </span>
+        <div class="input__div">
+          <input
+            placeholder="Username"
+            formControlName="userName"
+            type="text"
+            id="user__name__id"
+            [ngClass]="
+              userNameControl?.touched
+                ? userNameControl?.valid
+                  ? 'inp__valid'
+                  : 'inp__err'
+                : ''
+            "
+          />
+          <i class="fa-regular fa-user"></i>
+        </div>
       </div>
       <div>
-        <label for="user__email__id">email</label>
-        <input formControlName="email" type="text" id="user__email__id" 
-        [class.inp__valid]="emailControl?.valid "
-        />
+        <span
+          class="span__err"
+          *ngIf="emailControl?.touched && emailControl?.invalid"
+        >
+          Por favor coloca un email valido
+        </span>
+        <div class="input__div">
+          <input
+            placeholder="Email"
+            formControlName="email"
+            type="text"
+            id="user__email__id"
+            [ngClass]="
+              emailControl?.touched
+                ? emailControl?.valid
+                  ? 'inp__valid'
+                  : 'inp__err'
+                : ''
+            "
+          />
+
+          <i class="fa-regular fa-envelope"></i>
+        </div>
       </div>
       <div>
-        <label for="user__pass__id">password</label>
-        <input formControlName="password" type="text" id="user__pass__id" 
-        [class.inp__valid]="  passwordControl?.valid "
-        />
+        <span
+          class="span__err"
+          *ngIf="
+            passwordControl?.invalid &&
+            (passwordControl?.dirty || passwordControl?.touched)
+          "
+        >
+          La contrasenia debe tener un minimo de 8 caracteres
+        </span>
+        <div class="input__div">
+          <input
+            placeholder="Password"
+            formControlName="password"
+            type="text"
+            id="user__pass__id"
+            [ngClass]="
+              passwordControl?.touched
+                ? passwordControl?.valid
+                  ? 'inp__valid'
+                  : 'inp__err'
+                : ''
+            "
+          />
+
+          <i class="fa-solid fa-key"></i>
+        </div>
       </div>
-      <div>
-        <label for="user__confPass__id">confirmPassword</label>
-        <input
-          formControlName="confirmPassword"
-          type="text"
-          id="user__confPass__id"
-          [ngClass]=" confirmPasswordControl?.valid ? 'inp__valid' : 'inp__err' "
-        />
-      </div>
+
       <div>
         <button type="submit">Registrarse</button>
       </div>
     </form>
-    <div>
+    <div class="footer__mensaje">
       <p>
-        {{ signUpForm.status }}
+        Al registrarte, aceptas nuestras Condiciones, nuestra Política de
+        privacidad y nuestra Política de cookies.
       </p>
     </div>
   </div>
 </div>
-
-

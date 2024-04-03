@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(230, 235, 240);
+}
+
+
+main {
+    width: 50%;
+    height: 70vh;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

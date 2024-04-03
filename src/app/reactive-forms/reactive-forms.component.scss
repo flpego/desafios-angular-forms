@@ -1,37 +1,111 @@
 .registrarse__container {
-    width: 100%;
+    width: 90%;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 1px 2px 17px rgb(164, 165, 165);
+    border-radius: 15px;
 }
 
-div {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    
-    input {
-        background-color: #fff;
-        border: 1px solid #333;
-        outline: none;
-        padding: .5rem 1rem;
-        margin: 1rem;
-        &:focus{
-            background-color: transparent;
+.div__form__container {
+    margin: 1rem;
+    form {
+        width: 80%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem 0;
+        input {
+            border-radius: 8px;
+            background-color: #fff;
+            border: 1px solid #747474;
+            box-shadow: 1px 1px 17px #baddb3;
+            outline: none;
+            padding: 0.7rem 1rem;
+            font-size: 1.1rem;
         }
-        &::-webkit-input-placeholder {
-            background-color: transparent;
-          }
+    }
+
+    button {
+        border: none;
+        border-radius: 10px;
+        background-color: #747474;
+        box-shadow: 1px 1px 17px #baddb3;
+
+        color: #fcfcfc;
+        margin-top: 1rem;
+        padding: 0.7rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+            background-color: #b6b6b6;
+            box-shadow: 1px 1px 17px #999898;
+        }
     }
 }
 
-.inp__valid{
-    border: 1px solid green !important; 
-    background-color: #fff ;
+.footer__mensaje {
+    p {
+        text-align: center;
+        font-size: 13px;
+    }
 }
 
-.inp__err{
-    border: 1px solid red !important; 
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h4 {
+        padding: 1rem 0.5rem;
+        font-size: 1.3rem;
+    }
+}
+
+.input__div {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    input {
+        width: 100%;
+        padding-right: 40px;
+    }
+    i {
+        position: absolute;
+        right: 10px;
+    }
+}
+
+.inp__valid {
+    border: 1px solid green !important;
+        box-shadow: 1px 1px 7px greenyellow;
+
+    input {
+        border: 1px solid green;
+        color: green;
+    }
+}
+
+.inp__err {
+    border: 1px solid red !important;
     background-color: red;
-
+    color: red;
+    input {
+        border: 1px solid red;
+        box-shadow: 1px 1px 7px red;
+        color: red;
+        &::placeholder {
+            color: red;
+        }
+    }
+}
+.d-none {
+    display: none;
+}
+.error-message {
+    display: block;
 }
 
-
-
+.span__err {
+    color: red;
+}
