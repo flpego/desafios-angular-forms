@@ -1,0 +1,45 @@
+<div class="registrarse__container">
+  <div>
+    <h4>Registrarse</h4>
+  </div>
+  <div>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="user__name__id">User Name</label>
+        <input formControlName="userName" type="text" id="user__name__id"
+        [class.inp__valid]="userNameControl?.valid "/>
+      </div>
+      <div>
+        <label for="user__email__id">email</label>
+        <input formControlName="email" type="text" id="user__email__id" 
+        [class.inp__valid]="emailControl?.valid "
+        />
+      </div>
+      <div>
+        <label for="user__pass__id">password</label>
+        <input formControlName="password" type="text" id="user__pass__id" 
+        [class.inp__valid]="  passwordControl?.valid "
+        />
+      </div>
+      <div>
+        <label for="user__confPass__id">confirmPassword</label>
+        <input
+          formControlName="confirmPassword"
+          type="text"
+          id="user__confPass__id"
+          [ngClass]=" confirmPasswordControl?.valid ? 'inp__valid' : 'inp__err' "
+        />
+      </div>
+      <div>
+        <button type="submit">Registrarse</button>
+      </div>
+    </form>
+    <div>
+      <p>
+        {{ signUpForm.status }}
+      </p>
+    </div>
+  </div>
+</div>
+
+

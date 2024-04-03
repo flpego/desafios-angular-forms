@@ -1,0 +1,37 @@
+.registrarse__container {
+    width: 100%;
+}
+
+div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    
+    input {
+        background-color: #fff;
+        border: 1px solid #333;
+        outline: none;
+        padding: .5rem 1rem;
+        margin: 1rem;
+        &:focus{
+            background-color: transparent;
+        }
+        &::-webkit-input-placeholder {
+            background-color: transparent;
+          }
+    }
+}
+
+.inp__valid{
+    border: 1px solid green !important; 
+    background-color: #fff ;
+}
+
+.inp__err{
+    border: 1px solid red !important; 
+    background-color: red;
+
+}
+
+
+
